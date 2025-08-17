@@ -1,0 +1,150 @@
+/* ========== Base / Global Resets ========== */
+*,
+*::before,
+*::after { /* Selects all elements and their pseudo-elements. */
+  box-sizing: inherit; /* Make them inherit the box-sizing we set on html. */
+}
+
+body { /* Global text and page background styles. */
+  margin: 0; 
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+  line-height: 1.5; 
+  color: #222; 
+  background-color: lightgray; /* ✅ Change this color */
+}
+
+html { /* Root element for global defaults. */
+  box-sizing: border-box; /* Use border-box so width includes padding + border. Easier sizing. */
+  font-size: 16px; /* Base font size; 1rem = 16px. */
+}
+
+body { /* Global text and page background styles. */
+  margin: 0; /* Remove default body margin so we control spacing. */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Readable, common font stack. */
+  line-height: 1.5; /* Improve readability by adding vertical rhythm. */
+  color: #222; /* Default text color (dark gray). */
+  background-color: greys; /* Light gray page background for contrast. */
+}
+
+/* ========== Typography ========== */
+h1, h2, h3 { /* Headings share similar spacing. */
+  margin: 0 0 0.5rem; /* No top margin; add a little space below. */
+  line-height: 1.2; /* Slightly tighter than body text. */
+}
+
+p { /* Paragraph spacing. */
+  margin: 0 0 1rem; /* Space below each paragraph. */
+}
+
+/* ========== Header ========== */
+.site-header { /* Big banner at the top. */
+  text-align: center; /* Center the heading and tagline. */
+  padding: 2rem 1rem; /* Space inside header: 2rem top/bottom, 1rem sides. */
+  background: #e0e7ff; /* Soft indigo-tinted background to highlight the area. */
+  border-bottom: 3px solid #6366f1; /* A thick bottom border to show the box edge. */
+}
+
+.tagline { /* Subtitle under the main heading. */
+  margin-top: 0.25rem; /* Small gap above the tagline. */
+  color: #374151; /* Dark gray text. */
+}
+
+/* ========== Navigation ========== */
+.site-nav { /* Horizontal bar with links. */
+  display: flex; /* Lay out children (links) in a row. */
+  gap: 0.75rem; /* Space between the links. */
+  justify-content: center; /* Center the row horizontally. */
+  padding: 0.75rem 1rem; /* Space inside the nav bar. */
+  background: #eef2ff; /* Very light background color. */
+  border-bottom: 1px solid #c7d2fe; /* Thin divider line under nav. */
+}
+
+.site-nav a { /* Individual link appearance. */
+  text-decoration: none; /* Remove default underline. */
+  padding: 0.5rem 0.75rem; /* Make links easier to click. */
+  border: 1px solid #6366f1; /* Outline to show the box boundary. */
+  border-radius: 9999px; /* Full rounding (pill shape). */
+  color: #1f2937; /* Dark text for readability. */
+}
+
+.site-nav a:hover { /* Hover state feedback. */
+  background: #6366f1; /* Fill background on hover. */
+  color: white; /* White text on colored background. */
+}
+
+/* ========== Main Layout Wrapper ========== */
+.container { /* Centers content and limits line length. */
+  max-width: 960px; /* Max content width; prevents super-long lines. */
+  margin: 1.5rem auto; /* Top/bottom margin; auto left/right centers the block. */
+  padding: 0 1rem; /* Horizontal padding so content doesn't touch the edges on small screens. */
+}
+
+/* ========== Reusable Panel/Card Styles ========== */
+.panel { /* Card-like sections to demonstrate the box model. */
+  background: white; /* White background to contrast the page gray. */
+  border: 1px solid #e5e7eb; /* Visible border to show the box edge. */
+  padding: 1rem; /* Inner space (padding) you can clearly see. */
+  margin: 1rem 0; /* Outer space (margin) separating panels. */
+  border-radius: 0.75rem; /* Soft rounded corners. */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Subtle depth. */
+}
+
+/* Grid of card boxes. */
+.cards { /* The container for the card grid. */
+  display: grid; /* Use CSS Grid for flexible columns. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns: at least 220px, otherwise 1 fraction each. */
+  gap: 1rem; /* Space between grid items (like margins between cards). */
+}
+
+.card { /* Each individual card. */
+  background: #ffffff; /* Card background. */
+  border: 2px dashed #93c5fd; /* Dashed border makes the edge obvious. */
+  padding: 1rem; /* Inner space so text doesn't touch the border. */
+  border-radius: 0.75rem; /* Rounded corners. */
+}
+
+.card h3 { /* Card title spacing. */
+  margin-top: 0; /* Remove extra top gap created by defau lt heading margins. */
+}
+
+/* ========== Button ========== */
+.btn { /* Reusable primary button. */
+  display: inline-block; /* Respect width by content; allows padding and margins. */
+  padding: 0.625rem 1rem; /* Inner space (10px top/bottom, 16px sides approximately). */
+  border: 2px solid #2563eb; /* Blue border to define edge. */
+  background: #2563eb; /* Blue fill. */
+  color: white; /* High-contrast text color. */
+  border-radius: 9999px; /* Pill shape. */
+  cursor: pointer; /* Pointer cursor on hover. */
+  transition: transform 0.1s ease, background 0.2s ease, color 0.2s ease; /* Smooth hover feedback. */
+}
+
+.btn:hover { /* Hover effect for button. */
+  transform: translateY(-1px); /* Tiny lift on hover. */
+  background: transparent; /* Remove fill on hover. */
+  color: #2563eb; /* Blue text when background becomes transparent. */
+}
+
+/* ========== Box Model Demo ========== */
+.box-demo .box { /* Shared styles for the two demo boxes. */
+  background: #e0f2fe; /* Light cyan so the content area is visible. */
+  border: 4px solid #0284c7; /* Thick border to visualize the edge. */
+  padding: 16px; /* Inner space to show padding. */
+  margin: 12px 0; /* Space outside the box to separate them. */
+  width: 220px; /* Same width for both boxes; sizing model changes the final rendered width. */
+}
+
+.content-box { /* First box uses the default sizing model. */
+  box-sizing: content-box; /* Width excludes padding and border (box becomes wider overall). */
+}
+
+.border-box { /* Second box uses border-box model. */
+  box-sizing: border-box; /* Width includes padding and border (box stays at set width). */
+}
+
+/* ========== Footer ========== */
+.site-footer { /* Small footer at the bottom. */
+  text-align: center; /* Center the text. */
+  padding: 1rem; /* Space inside footer. */
+  color: #6b7280; /* Muted gray text. */
+}

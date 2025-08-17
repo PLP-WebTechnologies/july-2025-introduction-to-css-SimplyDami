@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!-- Tells the browser to use HTML5 (standards mode). -->
+<html lang="en"> <!-- Root element of the page. The lang attribute helps accessibility and SEO. -->
+<head> <!-- Head contains metadata and links to external resources. -->
+  <meta charset="UTF-8"> <!-- Character encoding so text/symbols display correctly. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes layout responsive on mobile devices. -->
+  <title>CSS Basics & Box Model Practice</title> <!-- The text shown in the browser tab. -->
+  <link rel="stylesheet" href="styles.css"> <!-- Connects this HTML to the external CSS file. -->
+</head>
+<body> <!-- Everything inside <body> is visible page content. -->
+  <header class="site-header"> <!-- Top banner area for title and tagline. -->
+    <h1>The use of CSS Basics & The Box Model</h1> <!-- Main heading of the page. -->
+    <p class="tagline">I am practicing the use of selectors, colors, spacing, and layout.</p> <!-- Subtitle line under the main heading. -->
+  </header> <!-- End header section. -->
+
+  <nav class="site-nav"> <!-- Simple navigation bar with anchor links to sections below. -->
+    <a href="#intro">Introduction</a> <!-- Jumps to the section with id="intro". -->
+    <a href="#cards">About Me</a> <!-- Jumps to the section with id="cards". -->
+    <a href="#box-model">My page</a> <!-- Jumps to the section with id="box-model". -->
+    <a href="#contact">Contact</a> <!-- Jumps to the section with id="contact". -->
+  </nav> <!-- End nav. -->
+
+  <main class="container"> <!-- Main content wrapper (we'll center and size it in CSS). -->
+    <section id="intro" class="panel"> <!-- A content block. 'panel' class gives card-like styling. -->
+      <h2>Introduction to CSS</h2> <!-- Section heading. -->
+      <p><strong>Goal:</strong> style text and boxes using an external CSS file.</p> <!-- Paragraph with bold label. -->
+      <p>Learning and Practicing <em>margin</em>, <em>Box Models</em>, <em>padding</em>, and <em>border</em> to see spacing.</p> <!-- Paragraph with emphasized words. -->
+      <button class="btn">Primary Button</button> <!-- A styled button to practice hover/border/padding. -->
+    </section> <!-- End intro panel. -->
+
+    <section id="cards" class="cards"> <!-- Grid of three card elements to show spacing and layout. -->
+      <article class="card"> <!-- Individual card box. -->
+        <h3>Motivation</h3> <!-- Card title. -->
+        <p>You are going to get better at this because you are Champion.</p> <!-- Card text. -->
+      </article> <!-- End card. -->
+
+      <article class="card"> <!-- Second card. -->
+        <h3>Believe</h3> <!-- Card title. -->
+        <p>Believe in yourself even when no one else does, take it personal.</p> <!-- Card text. -->
+      </article> <!-- End card. -->
+
+      <article class="card"> <!-- Third card. -->
+        <h3>Goal</h3> <!-- Card title. -->
+        <p>Getting better and achieving all round growth.</p> <!-- Card text. -->
+      </article> <!-- End card. -->
+    </section> <!-- End cards grid. -->
+
+    <section id="box-model" class="panel box-demo"> <!-- Section that visually compares sizing models. -->
+      <h2>Box Model in Action</h2> <!-- Section heading. -->
+      <div class="box content-box">content-box (width excludes padding & border)</div> <!-- Box using content-box model. -->
+      <div class="box border-box">border-box (width includes padding & border)</div> <!-- Box using border-box model. -->
+      <p class="note">Both boxes have the same width in CSS. They render differently because of <code>box-sizing</code>.</p> <!-- Explains what to notice. -->
+    </section> <!-- End box model demo. -->
+
+    <section id="contact" class="panel"> <!-- Contact/info area. -->
+      <h2>Contact</h2> <!-- Section heading. -->
+      <p>Questions? Email: <a href="adepojusemilogo@gmail.com">adepojusemilogo@gmail.com</a></p> <!-- Clickable email link. -->
+    </section> <!-- End contact. -->
+  </main> <!-- End main content wrapper. -->
+
+  <footer class="site-footer"> <!-- Bottom area with small print. -->
+    <small>&copy; Adebisi Damiloa 2025 </small> <!-- Copyright notice. -->
+  </footer> <!-- End footer. -->
+</body> <!-- End visible content. -->
+</html> <!-- End of HTML document. -->
